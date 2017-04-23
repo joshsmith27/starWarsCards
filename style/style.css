@@ -7,10 +7,11 @@ body{
   text-align: center;
 }
 p{
-  font-size: 3vw;
+  font-size: 2.3vw;
   font-weight: bold;
 }
 input{
+  margin: 30px;
   font-size: 5vw;
   text-align: center;
   border: none;
@@ -20,6 +21,19 @@ input{
   border-bottom: solid 1px;
   outline: none;
   background: transparent;
+}
+button{
+  outline: none;
+  width: 30%;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background: #E7D21C;
+  margin: auto;
+  font-size: 3vw;
+}
+button:hover{
+  cursor: pointer;
 }
 .StarwarsTitle{
   margin: 0px;
@@ -38,7 +52,7 @@ input{
 .card-container{
   width: 30%;
   background:rgba(255,255,255, 0.7);
-  color: grey;
+  color: black;
   display: block;
   position: relative;
   margin: auto;
@@ -49,6 +63,17 @@ input{
   border: solid 1px black;
 }
 .StarWarsImg{
-  margin: 25px;
+  margin: auto;
+  margin-top: 15px;
   width: 80%;
+}
+.page{
+  font-size: 5vw;
+  margin: 0px;
+}
+.pagination-container{
+  margin: 30px;
+  margin-bottom: 65px;
+  display: flex;
+  justify-content: center;
 }

@@ -6,8 +6,8 @@ export const FETCH_PEOPLE = 'FETCH_PEOPLE';
 
 export const FETCH_PLANETS = 'FETCH_PLANETS';
 
-export function fetchPeople(person){
-    const url = `${ROOT_URL}?search=${person}`
+export function fetchPeople(person, page){
+    const url = `${ROOT_URL}?page=${page}&search=${person}`
     const request = axios.get(url);
     return{
       type: FETCH_PEOPLE,
