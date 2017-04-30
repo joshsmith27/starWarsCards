@@ -4,8 +4,27 @@ import { bindActionCreators } from 'redux';
 import { fetchPlanets } from '../actions/index';
 
 class StarWarsCards extends Component{
-    renderCard(person){
+  constructor(props) {
+    super(props);
+    this.state = {
+      favorite: true
+    };
 
+    this.onChange = this.onChange.bind(this);
+  }
+
+
+
+  onChange = () => {
+    if (this.state.favorite) {
+      this.state.favorite = false;
+    }else{
+      this.state.favorite = true;
+    }
+  };
+
+
+    renderCard(person){
     const name = person.name;
     const birthday = person.birth_year;
     const homePlanet = person.home_planet;
@@ -15,6 +34,15 @@ class StarWarsCards extends Component{
         <p>Name: {name}</p>
         <p>Birth Year: {birthday}</p>
         <p>{homePlanet}</p>
+        <p>Favorite:
+          <span>
+            <input
+              type = 'checkbox'
+              checked = {this.state.favorites}
+              onChange = {this.onChange}
+            />
+          </span>
+        </p>
       </div>
     );
   }
@@ -25,8 +53,11 @@ class StarWarsCards extends Component{
         return(
           <div>
           {this.props.people.results.map((card) =>{
+            card.favorite = false;
             this.props.fetchPlanets(card.homeworld).then((results) =>{
-              card.home_planet = results.payload.data.name;});
+              card.home_planet = results.payload.data.name;
+            });
+
             return this.renderCard(card);
           })}
           </div>
@@ -37,4 +68,5 @@ class StarWarsCards extends Component{
 function mapStateToProps(state){
   return {people: state.people};
 }
+
 export default connect (mapStateToProps, {fetchPlanets})(StarWarsCards);
