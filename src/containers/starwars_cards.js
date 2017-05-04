@@ -53,7 +53,6 @@ class StarWarsCards extends Component{
         return(
           <div>
           {this.props.people.results.map((card) =>{
-            card.favorite = false;
             this.props.fetchPlanets(card.homeworld).then((results) =>{
               card.home_planet = results.payload.data.name;
             });
