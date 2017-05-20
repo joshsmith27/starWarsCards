@@ -17,9 +17,9 @@ class StarWarsCards extends Component{
 
   onChange = () => {
     if (this.state.favorite) {
-      this.state.favorite = false;
+      this.setState({favorite:false});
     }else{
-      this.state.favorite = true;
+      this.setState({favorite:true});
     }
   };
 
@@ -40,6 +40,7 @@ class StarWarsCards extends Component{
               type = 'checkbox'
               checked = {this.state.favorites}
               onChange = {this.onChange}
+              value = {person}
             />
           </span>
         </p>
