@@ -32,6 +32,16 @@ button{
   margin: auto;
   font-size: 3vw;
 }
+.add-favorites-button {
+  margin: 6px 10px;
+  margin-bottom: 17px;
+  width: 75%;
+  font-size: 2vw;
+}
+.add-favorites-button:hover {
+  background: #E7D26C;
+  border: none;
+}
 button:hover{
   cursor: pointer;
 }
